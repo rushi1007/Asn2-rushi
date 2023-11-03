@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Car Information</title>
+</head>
+<body>
+    <h1>Sale Details</h1>
+  {{#if carInfo}}
+    <div>
+        <h2>Invoice No: {{carInfo.Invoice_ID}}</h2>
+        <p>Branch: {{carInfo.Branch}}</p>
+        <p>City: {{carInfo.City}}</p>
+        <p>Product line: {{carInfo.Product_line}}</p>
+        <p>name: {{carInfo.name}}</p>
+        <p>image: {{carInfo.image}}</p>
+        <p>Unit Price: {{carInfo.Unit_price}}</p>
+        <p>Date: {{carInfo.Date}}</p>
+        <p>Payment: {{carInfo.Payment}}</p>
+        <p>Rating: {{carInfo.Rating}}</p>
+
+    </div>
+  {{else}}
+    <p>Invoice not found</p>
+  {{/if}}
+</body>
+</html>

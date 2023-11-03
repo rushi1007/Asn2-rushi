@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sales Data</title>
+  <style>
+    table {
+      font-family: Arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    td, th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+<body>
+  <h1>Sales Data</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Invoice ID</th>
+        <th>Branch</th>
+        <th>City</th>
+        <th>Customer Type</th>
+        <th>Product Line</th>
+        <th>Product Name</th>
+        <th>Image</th>
+        <th>Unit Price</th>
+        <th>Quantity</th>
+        <th>Tax (5%)</th>
+        <th>Total</th>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Payment</th>
+        <th>COGS</th>
+        <th>Gross Income</th>
+        <th>Rating</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each salesData}}
+        <tr>
+          <td>{{this.Invoice_ID}}</td>
+          <td>{{this.Branch}}</td>
+          <td>{{this.City}}</td>
+          <td>{{this.Customer_Type}}</td>
+          <td>{{ this.Product_line}}</td>
+          <td>{{this.name}}</td>
+          <td>{{this.image}}</td>
+          <td>{{ this.Unit_price}}</td>
+          <td>{{this.Quantity}}</td>
+          <td>{{ this.Tax_5}}</td>
+          <td>{{this.Total}}</td>
+          <td>{{this.Date}}</td>
+          <td>{{this.Time}}</td>
+          <td>{{this.Payment}}</td>
+          <td>{{this.cogs}}</td>
+          <td>{{ this.gross_income}}</td>
+          <td>{{this.Rating}}</td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</body>
+</html>

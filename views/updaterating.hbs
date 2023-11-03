@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View Invoices</title>
+    <style>
+    table {
+      font-family: Arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    td, th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+    /* Define a CSS class for highlighting */
+    .highlight {
+      background-color: yellow; 
+    }
+  </style>
+</head>
+<body>
+    <h1>Sales Data with highlighting</h1>
+    <table>
+        <tr>
+            <th>Invoice ID</th>
+            <th>Branch</th>
+            <th>City</th>
+            <th>Customer Type</th>
+            <th>Product Line</th>
+            <th>Unit Price</th>
+            <th>Quantity</th>
+            <th>Total</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Payment</th>
+            <th>COGS</th>
+            <th>Gross Income</th>
+            <th>Rating</th>
+        </tr>
+        {{#each supersalesData}}
+        <tr class="{{#if (isZeroRating this.Rating)}}highlight{{else}}{{/if}}">
+            <td>{{this.[Invoice ID]}}</td>
+            <td>{{this.Branch}}</td>
+            <td>{{this.City}}</td>
+            <td>{{this.[Customer type]}}</td>
+            <td>{{this.[Product line]}}</td>
+            <td>{{this.[Unit price]}}</td>
+            <td>{{this.Quantity}}</td>
+            <td>{{this.Total}}</td>
+            <td>{{this.Date}}</td>
+            <td>{{this.Time}}</td>
+            <td>{{this.Payment}}</td>
+            <td>{{this.cogs}}</td>
+            <td>{{this.[gross income]}}</td>
+            <td>{{this.Rating}}</td>
+        </tr>
+        {{!-- {{/ratingHelper}} --}}
+        {{/each}}
+    </table>
+</body>
+</html>
